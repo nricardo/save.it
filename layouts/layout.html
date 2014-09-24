@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{title}} - {{site.name}}</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/app.css">
+  </head>
+
+  <body>
+
+  <!-- === HEADER =========================================================== -->
+  <header>
+    <div class="container">
+      <!-- site logo -->
+      <div class="pull-left"><img src="/images/logo.png" alt="Logo" title="{{site.name}}" /></div>
+
+      <!-- Navigation -->
+      <nav class="media pull-right">
+        <ul class="nav nav-pills">
+          <li><a href="/dashboard"><span class="glyphicon glyphicon-tasks"></span> DASHBOARD</a></li>
+          <li><a href="/accounts"><span class="glyphicon glyphicon-book"></span> ACCOUNTS</a></li>
+          <li><a href="/reports"><span class="glyphicon glyphicon-file"></span> REPORTS</a></li>
+          <li><a href="/stats"><span class="glyphicon glyphicon-signal"></span> STATISTICS</a></li>
+          <li><a href="/about"><span class="glyphicon glyphicon-info-sign"></span> ABOUT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- === CONTENTS ========================================================= -->
+  <main class="container">
+    <!-- Page contents (template) -->
+    {{{body}}}
+  </main>
+
+  <!-- === FOOTER =========================================================== -->
+  <footer>
+    <div class="row">
+
+      <div class="col-md-6">
+        <p>{{site.copyright}} - <a href="mailto: {{site.author.email}}">{{site.author.name}}</a></p>
+      </div>
+
+      <div class="col-md-6 text-right">
+        <a href="http://nodejs.org/" target="_blank" title=""><img src="/images/node.png" alt="NodeJS" title="NodeJS" /></a>
+        <a href="http://www.w3.org/standards/webdesign/htmlcss" target="_blank"><img src="/images/html5.png" alt="HTML5" title="HTML5 Powered with CSS3 / Styling" /></a>
+        <a href="http://www.css3.info/" target="_blank"><img src="/images/css3.png" alt="CSS3" title="Cascading Style Sheets v3" /></a>
+        <a href="http://twitter.github.com/bootstrap/index.html" target="_blank"><img src="/images/bootstrap.png" alt="Bootstrap" title="Bootstrap, from Twitter" /></a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Javascripts goes here! -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+
+  </body>
+</html>

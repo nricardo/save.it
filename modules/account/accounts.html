@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h1>List of Accounts</h1>
+  <small> <p class="text-muted">List of all accounts created and their respective summary.</p> </small>
+</div>
+
+<ul class="">
+{{#accounts}}
+  <li class=""><a href="/accounts/{{id}}" title="{{name}}">{{name}}</a></li>
+{{/accounts}}
+</ul>
+
+{{> form}}
+
+<a id="add-account" href="/accounts#" class="btn btn-primary" role="button">Add new account...</a>
