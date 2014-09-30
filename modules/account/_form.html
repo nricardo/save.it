@@ -1,6 +1,55 @@
-<form name="account" method="put" action="/accounts">
-  <input id="name" type="text" placeholder="Account Name" />
-  <input id="asda" type="text" placeholder="" />
-  <input id="dwad" type="text" placeholder="" />
-  <button type="submit" class="btn btn-success btn-small">Save</button>
+<form id="account-form" method="post" action="/accounts" class="form-horizontal">
+<fieldset>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="name">Name</label>
+  <div class="col-md-4">
+    <input id="name" name="name" type="text" placeholder="Account name..." class="form-control input-md" required="">
+    <span class="help-block">A simple account name for reference.</span>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="desc">Description</label>
+  <div class="col-md-4">
+    <textarea class="form-control" id="desc" name="desc" placeholder="Brief account description..."></textarea>
+    <p class="help-block">A small description text, that helps you remind what this account is here for!</p>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="type">Type</label>
+  <div class="col-md-4">
+    <select id="type" name="type" class="form-control">
+      <option value="1">X</option>
+      <option value="2">Y</option>
+    </select>
+    <p class="help-block">Choose the type of this account. Think of what's the main purpose...!</p>
+  </div>
+</div>
+
+<!-- Appended Input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="balance">Balance</label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <input id="balance" name="balance" class="form-control" placeholder="Initial balance amount..." type="text">
+      <span class="input-group-addon">€</span>
+    </div>
+    <p class="help-block">If your account starts with some balance, enter the amount here!</p>
+  </div>
+</div>
+
+<!-- Buttons -->
+<div class="form-group">
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-success">Save</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+  </div>
+</div>
+
+</fieldset>
 </form>

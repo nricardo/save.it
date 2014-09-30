@@ -2,7 +2,6 @@
 // -- load dependencies
 var path = require('path');
 var mongoose = require('mongoose');
-var Account = mongoose.Schema('Account', require('./schema'));
 
 module.exports = function (app, opts) {
 
@@ -10,26 +9,51 @@ module.exports = function (app, opts) {
   var templr = opts.helpers.templr;
   var partlr = opts.helpers.partlr;
 
+  // -- make account model available
+  var Account = mongoose.model('Account', require('./schema'));
+
   // -- module's middleware
   app.get('/accounts/:id', function (req, res, next) {
-    var account = {};
-    res.render(templr('account'), { account: account });
+    console.log(req.params)
+
+    // -- get account
+    //var account = Account.findOne(req.params.id) || null;
+
+    res.render(templr('account'), { account: null });
   });
 
   app.get('/accounts', function (req, res, next) {
-    // -- set template title
-    app.locals.title = 'Accounts';
-
-    // -- gain access to db
-    var db = req.db;
-
-    // -- read accounts info
-    var accounts = {};//req.db.accounts.find() || {};
-
     // -- register partials
     partlr('form');
 
-    // -- render template
-    res.render(templr('accounts'), { accounts: accounts });
+    // -- read accounts info
+    Account.find({}, function (err, accounts) {
+      if (err) next(err);
+
+      // -- render template
+      app.locals.title = 'Accounts';
+      res.render(templr('accounts'), { accounts: accounts });
+    });
+  });
+
+  app.post('/accounts', function (req, res, next) {
+    console.log(req)
+
+    // -- create new account
+    var account = new Account({
+      name: 'xpto',
+      type: 'A',
+      desc: 'Just a test...',
+      balance: 250
+    });
+
+    // -- save account into database
+    account.save(function (err, data) {
+      if (err) next(err);
+      console.log(data)
+    });
+
+    // -- redirect
+    res.redirect('/accounts');
   });
 }

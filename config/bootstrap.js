@@ -5,7 +5,7 @@ var path = require('path');
 var hbs  = require('hbs');
 //var favicon = require('static-favicon');
 //var logger = require('morgan');
-//var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 //var cookieParser = require('cookie-parser');
 
 module.exports = function (express) {
@@ -17,13 +17,11 @@ module.exports = function (express) {
   var app = express();
 
   // -- setup app middleware
-  /*
-  app.use(favicon());
-  app.use(logger('dev'));
-  app.use(cookieParser());
+  //app.use(favicon());
+  //app.use(logger('dev'));
+  //app.use(cookieParser());
   app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded());
-  */
+  app.use(bodyParser.urlencoded({extended: true}));
   app.use(express.static(config.PATHS.web));
 
   // -- setup server port
