@@ -4,28 +4,16 @@ var mongoose = require('mongoose');
 
 // -- setup DB access and hook to it
 // -- we'll use MongoDB throughout Mongoose ODM
-module.exports = function (app, config) {
+module.exports = function (app, db) {
   // -- database full URI
-  var dburi = 'mongodb://' + config.DB.host +  ':' + config.DB.port + '/' + config.DB.dbname;
+  var uri = 'mongodb://' + db.host +  ':' + db.port + '/' + db.dbname;
 
   // -- try to connect
-  var con = mongoose.connect(dburi);
-  var db  = mongoose.connection;
+  mongoose.connect(uri, function (err) {
+    // -- log in case of error
+    if (err) app.logger.error('Could not connect to database... Please check your configurations or network connections!');
 
-  // -- check connection status
-  // - in case of an error
-  db.on('error', function (err) {
-    console.error(err);
+    // -- successfull connection ?
+    app.logger.info('Connected to database: %s', uri);
   });
-  // - in case we connected successfully
-  db.on('connected', function () {
-    console.log('Connected to:', dburi);
-    // -- hook db to incoming requests
-    app.use(function (req, res, next) {
-      req.db = db;
-      next();
-    });
-  });
-
-  return db;
 }

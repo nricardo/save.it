@@ -14,8 +14,6 @@ module.exports = function (app, opts) {
 
   // -- module's middleware
   app.get('/accounts/:id', function (req, res, next) {
-    console.log(req.params)
-
     // -- get account
     //var account = Account.findOne(req.params.id) || null;
 
@@ -37,8 +35,6 @@ module.exports = function (app, opts) {
   });
 
   app.post('/accounts', function (req, res, next) {
-    console.log(req)
-
     // -- create new account
     var account = new Account({
       name: 'xpto',

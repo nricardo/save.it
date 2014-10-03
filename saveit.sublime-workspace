@@ -4,16 +4,32 @@
 		"selected_items":
 		[
 			[
-				"ne",
-				"next"
+				"L",
+				"listen"
 			],
 			[
-				"Acc",
-				"Account"
+				"config",
+				"configurations"
+			],
+			[
+				"ap",
+				"application"
+			],
+			[
+				"se",
+				"settings"
+			],
+			[
+				"configu",
+				"configurator"
 			],
 			[
 				"acc",
 				"account"
+			],
+			[
+				"par",
+				"params"
 			],
 			[
 				"conn",
@@ -124,10 +140,6 @@
 				"log"
 			],
 			[
-				"config",
-				"configfiles"
-			],
-			[
 				"dep",
 				"dependencies"
 			],
@@ -199,48 +211,32 @@
 			"file": "app.js",
 			"settings":
 			{
-				"buffer_size": 948,
+				"buffer_size": 981,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/bootstrap.js",
+			"file": "init.js",
 			"settings":
 			{
-				"buffer_size": 2565,
-				"line_ending": "Unix"
+				"buffer_size": 2503,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "modules/account/account.js",
+			"file": "config/settings.js",
 			"settings":
 			{
-				"buffer_size": 1355,
-				"line_ending": "Unix"
+				"buffer_size": 847,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "modules/account/accounts.html",
+			"file": "modules/home/home.js",
 			"settings":
 			{
-				"buffer_size": 1137,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "modules/account/_form.html",
-			"settings":
-			{
-				"buffer_size": 1917,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "modules/account/schema.js",
-			"settings":
-			{
-				"buffer_size": 249,
-				"line_ending": "Unix"
+				"buffer_size": 591,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -271,38 +267,48 @@
 	},
 	"expanded_folders":
 	[
-		"/home/crypton/Projects/save.it",
-		"/home/crypton/Projects/save.it/config",
-		"/home/crypton/Projects/save.it/layouts",
-		"/home/crypton/Projects/save.it/models",
-		"/home/crypton/Projects/save.it/modules",
-		"/home/crypton/Projects/save.it/modules/account",
-		"/home/crypton/Projects/save.it/modules/home"
+		"/C/Users/nricardo/Projects/save.it",
+		"/C/Users/nricardo/Projects/save.it/config",
+		"/C/Users/nricardo/Projects/save.it/layouts",
+		"/C/Users/nricardo/Projects/save.it/logs",
+		"/C/Users/nricardo/Projects/save.it/modules",
+		"/C/Users/nricardo/Projects/save.it/modules/home"
 	],
 	"file_history":
 	[
-		"/home/crypton/Projects/save.it/package.json",
-		"/home/crypton/Projects/save.it/modules/account/_form.html",
-		"/home/crypton/Projects/save.it/layouts/layout.html",
-		"/home/crypton/Projects/save.it/modules/account/accounts.html",
-		"/home/crypton/Projects/save.it/modules/account/account.html",
-		"/home/crypton/Projects/save.it/modules/account/schema.js",
-		"/home/crypton/Projects/save.it/modules/account/account.js",
-		"/home/crypton/Projects/save.it/config/config.js",
-		"/home/crypton/Projects/save.it/config/db.js",
-		"/home/crypton/Projects/save.it/config/bootstrap.js",
+		"/C/Users/nricardo/Projects/save.it/logs/app.log",
+		"/C/Users/nricardo/Projects/save.it/config/settings.js",
+		"/C/Users/nricardo/Projects/save.it/config/db.js",
+		"/C/Users/nricardo/Projects/save.it/modules/account/account.js",
+		"/C/Users/nricardo/Projects/save.it/modules/account/accounts.html",
+		"/C/Users/nricardo/Projects/save.it/layouts/layout.html",
+		"/C/Users/nricardo/Projects/save.it/web/stylesheets/app.css",
+		"/C/Users/nricardo/Projects/save.it/modules/account/_form.html",
+		"/C/Users/nricardo/Projects/save.it/modules/account/account.html",
+		"/C/Users/nricardo/Projects/save.it/init.js",
+		"/C/Users/nricardo/Projects/save.it/package.json",
+		"/C/Users/nricardo/Projects/save.it/logs/mongod.log",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/nricardo/Projects/save.it/config/init.js",
+		"/C/Users/nricardo/Projects/save.it/modules/account/schema.js",
+		"/C/Users/nricardo/Projects/save.it/config/bootstrap.js",
+		"/C/Users/nricardo/Projects/save.it/config/config.js",
 		"/home/crypton/Projects/save.it/models/Account.js",
 		"/home/crypton/Projects/save.it/modules/home/home.js",
 		"/home/crypton/Projects/save.it/modules/home/welcome.html",
 		"/home/crypton/Projects/save.it/modules/home/views/about.html",
+		"/home/crypton/Projects/save.it/config/bootstrap.js",
 		"/home/crypton/Projects/save.it/lib/configr.js",
 		"/home/crypton/Projects/save.it/web/stylesheets/app.css",
+		"/home/crypton/Projects/save.it/layouts/layout.html",
 		"/home/crypton/Projects/save.it/modules/home/todo.js",
+		"/home/crypton/Projects/save.it/modules/account/account.js",
 		"/home/crypton/Projects/save.it/config/settings.js",
 		"/home/crypton/Projects/save.it/modules/home/config.json",
 		"/home/crypton/Projects/save.it/modules/account/config.json",
 		"/home/crypton/Projects/save.it/modules/home/views/welcome.html",
 		"/home/crypton/Projects/save.it/layouts/test/xpto.html",
+		"/home/crypton/Projects/save.it/package.json",
 		"/home/crypton/Projects/save.it/modules/home/settings.json",
 		"/home/crypton/Projects/save.it/layouts/home.html",
 		"/home/crypton/Projects/save.it/layouts/index.html",
@@ -356,13 +362,15 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			"-node_modules/*",
+			""
 		]
 	},
 	"find_state":
@@ -370,7 +378,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"muted",
+			"console",
+			"info",
+			"console",
 			"accounts",
 			" +",
 			"name",
@@ -395,7 +405,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -404,43 +414,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 948,
+						"buffer_size": 981,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								198,
-								198
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "config/bootstrap.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2565,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								571,
-								571
+								954,
+								954
 							]
 						],
 						"settings":
@@ -453,24 +435,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "modules/account/account.js",
+					"buffer": 1,
+					"file": "init.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1355,
+						"buffer_size": 2503,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								924,
-								924
+								2100,
+								2100
 							]
 						],
 						"settings":
@@ -480,34 +462,6 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": -0.0,
-						"translation.y": 51.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "modules/account/accounts.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1137,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								989,
-								989
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -515,25 +469,57 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "modules/account/_form.html",
+					"buffer": 2,
+					"file": "config/settings.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1917,
+						"buffer_size": 847,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								81,
-								81
+								223,
+								223
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "modules/home/home.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 591,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -541,41 +527,13 @@
 					},
 					"stack_index": 2,
 					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "modules/account/schema.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 249,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								190,
-								190
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -606,12 +564,12 @@
 	"menu_visible": true,
 	"output.find_results":
 	{
-		"height": 0.0
+		"height": 71.0
 	},
 	"project": "saveit.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":

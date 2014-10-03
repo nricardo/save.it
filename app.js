@@ -1,11 +1,13 @@
 
 "use strict";
 
-// -- load express
+// -- load dependencies
 var express = require('express');
 
-// -- bootstrap application
-var app = require('./config/bootstrap')(express);
+var init = require('./init');
+
+// -- initialize application
+var app = init(express);
 
 // -- load application modules
 app.load('home');
@@ -18,7 +20,7 @@ app.use(function(err, req, res, next) {
   // -- render error (500) page
   res.status = '500';
   res.render(res.status, { message: err });
-  console.error(err);
+  app.logger.error(err);
 });
 
 app.use(function(req, res, next) {
@@ -27,10 +29,12 @@ app.use(function(req, res, next) {
   // -- render 'Not found' (404) page
   res.status = '404';
   res.render(res.status, { message: 'No action defined for route: ' + req.url });
-  console.error('Action "%s" not found! Check your routing scheme.', req.url);
+  app.logger.warn('Action "%s" not found! Check your routing scheme.', req.url);
 });
 
 // -- start application
-app.listen(app.get('port'), function() { console.log('Express server listening on port %s.', app.get('port')); });
+app.listen(app.port, function() {
+  app.logger.info('up and running (pid: %s) - listening on port %s', process.pid, app.port);
+});
 
 module.exports = app;
