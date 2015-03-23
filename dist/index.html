@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SaveIT" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sav€.IT!</title>
+  <meta name="description" content="Control you expenses/budgets!">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/Save.IT!.css" />
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img src="images/logo.png" title="AngularJS">
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar">
+        <a href="#/dashboard" role="button" class="btn btn-warning navbar-btn"><span class="fa fa-dashboard"></span> Dashboard</a>
+        <a href="#/accounts" role="button" class="btn btn-success navbar-btn"><span class="fa fa-credit-card"></span> Accounts</a>
+        <a href="#/reports" role="button" class="btn btn-default navbar-btn"><span class="fa fa-bar-chart"></span> Reports/Analysis</a>
+
+        <ul class="nav navbar-nav navbar-right">
+          <div class="btn-group" dropdown>
+            <a href="#/login" role="button" class="btn btn-primary navbar-btn"><span class="fa fa-sign-in"></span> Login</a>
+            <button type="button" class="btn btn-primary navbar-btn dropdown-toggle" dropdown-toggle>
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#/profile"><span class="fa fa-user"></span> Profile</a></li>
+              <li><a href="#/prefs"><span class="fa fa-cog"></span> Preferences</a></li>
+              <li class="divider"></li>
+              <li><a href="#/logout"><span class="fa fa-sign-out"></span> Logout</a></li>
+            </ul>
+          </div>
+
+          <div class="btn-group" dropdown>
+            <a href="#/about" role="button" class="btn btn-info navbar-btn"><span class="fa fa-info"></span> About</a>
+            <button type="button" class="btn btn-info navbar-btn dropdown-toggle" dropdown-toggle>
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#/settings"><span class="fa fa-cogs"></span> Settings</a></li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+  </header>
+
+  <main class="container" ng-view></main>
+
+  <footer>
+    <div class="pull-left">
+      <img src="images/html5.png" alt="HTML5">
+      <img src="images/css3.png" alt="CSS3">
+      <img src="images/bootstrap.png" alt="Bootstrap">
+    </div>
+
+    <div class="pull-right">
+      <img src="images/angular.png" alt="Angular JS">
+      <img src="images/node.png" alt="Node JS">
+    </div>
+  </footer>
+
+  <!-- 3rd party vendor scripts -->
+  <script src="vendor/angular/angular.js"></script>
+  <script src="vendor/angular-route/angular-route.js"></script>
+  <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+  <!-- self application scripts -->
+  <script src="js/Save.IT!.js"></script>
+
+</body>
+</html>

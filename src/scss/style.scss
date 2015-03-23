@@ -1,0 +1,64 @@
+/**
+   _____                    ____________
+  / ___/____ __   _____    /  _/_  __/ /
+  \__ \/ __ `/ | / / _ \   / /  / / / /
+ ___/ / /_/ /| |/ /  __/ _/ /  / / /_/
+/____/\__,_/ |___/\___(_)___/ /_/ (_)
+
+   _____ __        __          __              __
+  / ___// /___  __/ /__  _____/ /_  ___  ___  / /_
+  \__ \/ __/ / / / / _ \/ ___/ __ \/ _ \/ _ \/ __/
+ ___/ / /_/ /_/ / /  __(__  ) / / /  __/  __/ /_
+/____/\__/\__, /_/\___/____/_/ /_/\___/\___/\__/
+         /____/
+*/
+
+/**
+ * Imports external SCSS files (e.g. Twitter Bootstrap, Font Awesome, etc...)
+ * --------------------------------------------------------------------------------
+ */
+@import 'bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+@import 'bower_components/fontawesome/scss/font-awesome';
+
+/**
+ * Project specific stylesheet files (themes, layout stuff)
+ * --------------------------------------------------------------------------------
+ */
+//@import 'variables';
+//@import 'bootswatch';
+
+// -- fixes href's when using UI-Bootstrap
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+body {
+  margin: 0 auto;
+}
+
+header {}
+
+nav {
+  .navbar-header img {
+    max-height: 40px;
+    margin: 5px 10px;
+  }
+}
+
+main {
+  height: auto !important;
+}
+
+footer {
+  background: #3F3F3F;
+  bottom: 0;
+  color: white;
+  height: 50px;
+  margin-top: 10px;
+  padding: 0 20px;
+  padding-top: 10px;
+  position: fixed;
+  width: 100%;
+
+  img {
+    max-height: 32px;
+  }
+}

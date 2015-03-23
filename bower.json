@@ -1,0 +1,15 @@
+{
+  "name": "Save.IT",
+  "description": "Keep your expenses/budgets under control!",
+  "version": "0.0.1",
+  "homepage": "https://github.com/nricardo/save.it",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "fontawesome": "~4.2.0",
+    "angular-bootstrap": "~0.12.1",
+    "bootstrap-sass-official": "~3.3.4"
+  }
+}
