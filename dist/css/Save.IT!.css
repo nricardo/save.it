@@ -7329,6 +7329,7 @@ nav .navbar-header img {
   margin: 5px 10px; }
 
 main {
+  padding-top: 60px;
   height: auto !important; }
 
 footer {

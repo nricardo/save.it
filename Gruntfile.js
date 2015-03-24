@@ -8,7 +8,7 @@ var wiredep = require('wiredep');
 // (scripts, stylesheets, fonts, images, etc...)
 var BOWER_PATH = 'bower_components';
 
-function ignoreBowerPath (file) { return path.relative(BOWER_PATH, file); };
+function ignoreBowerPath (file) { return path.relative(BOWER_PATH, file); }
 
 var bower = {
   // javascripts
@@ -74,6 +74,14 @@ module.exports = function (grunt) {
         ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
         ' * License: <%= pkg.licenses.type %> (<%= pkg.licenses.url %>)\n' +
         ' */'
+    },
+
+    /**
+     * Checks source code for syntax errors and also
+     * semantic errors and typos
+     */
+    jshint: {
+      all: ['Gruntfile.js', 'src/**/*.js']
     },
 
     /**
