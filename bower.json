@@ -10,6 +10,7 @@
     "angular-route": "1.2.x",
     "fontawesome": "~4.2.0",
     "angular-bootstrap": "~0.12.1",
-    "bootstrap-sass-official": "~3.3.4"
+    "bootstrap-sass-official": "~3.3.4",
+    "angulartics": "~0.17.2"
   }
 }

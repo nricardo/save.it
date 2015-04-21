@@ -69,10 +69,10 @@
     <div class="container" ng-view></div>
   </main>
 
-  <footer>
+  <footer ng-controller="FooterController">
     <div class="container">
       <div class="pull-left">
-        Copyright &copy; <span ng-bind="new Date('YYYY')"></span>
+        Copyright <span class="fa fa-copyright"></span> <span ng-bind="year"></span>, Nelson Ricardo
       </div>
 
       <div class="pull-right">
@@ -88,6 +88,20 @@
   <script src="vendor/angular/angular.js"></script>
   <script src="vendor/angular-route/angular-route.js"></script>
   <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="vendor/angulartics/src/angulartics.js"></script>
+  <script src="vendor/angulartics/src/angulartics-ga.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  //ga('create', 'UA-61687435-1', 'auto');
+  //ga('send', 'pageview');
+
+</script>
+
 
   <!-- self application scripts -->
   <script src="js/Save.IT!.js"></script>

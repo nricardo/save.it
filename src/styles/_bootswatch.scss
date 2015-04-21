@@ -37,7 +37,7 @@
     padding-bottom: ($navbar-padding-vertical - 2px);
     @include transition(color ease-in-out .2s);
   }
-  
+
   &-brand,
   &-brand:hover {
     @include transition(color ease-in-out .2s);
@@ -111,6 +111,10 @@
     background-image: none;
     @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
   }
+}
+
+.navbar-btn {
+  color: #FFF;
 }
 
 // Typography =================================================================

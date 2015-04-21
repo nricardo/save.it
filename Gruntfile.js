@@ -32,13 +32,10 @@ module.exports = function (grunt) {
    * Load required Grunt tasks. These are installed based on the versions listed
    * in `package.json` when you do `npm install` in this directory.
    */
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  require('jit-grunt')(grunt);
+
+  // -- measures the time taken by each task
+  require('time-grunt')(grunt);
 
   /**
    * Define tasks configuration.
@@ -102,7 +99,7 @@ module.exports = function (grunt) {
         banner: '<%= meta.banner %>',
       },
       dist: {
-        files: { '<%=paths.build%>/js/<%=pkg.name%>.js': ['src/**/*.js'] }
+        files: { '<%=paths.build%>/js/<%=pkg.name%>.js': ['src/**/*.js', 'obj/**/*.js'] }
       }
     },
 
@@ -111,7 +108,7 @@ module.exports = function (grunt) {
      */
     sass: {
       dist: {
-        files: { '<%=paths.build%>/css/<%=pkg.name%>.css': 'src/scss/style.scss' }
+        files: { '<%=paths.build%>/css/<%=pkg.name%>.css': 'src/styles/main.scss' }
       }
     },
 
@@ -129,10 +126,31 @@ module.exports = function (grunt) {
     },
 
     /**
+     * Transpiles from ES6 to todays JavaScript standart ES5.
+     */
+    traceur: {
+      options: {
+        // traceur options here
+        experimental: true,
+      },
+      six2five: {
+        files: [{
+          expand: true,
+          cwd: 'src/',
+          src: '**/*.es6.js',
+          dest: 'obj/',
+          rename: function (dest, orig) {
+            return dest + orig.replace('.es6.js', '.js');
+          }
+        }]
+      }
+    },
+
+    /**
      * Trasfers application files from one point to target's destination.
      */
     copy: {
-      build: {
+      dist: {
         files: [
           // -- assets (images, fonts, etc.)
           { expand: true, cwd: 'src/', src: ['images/**', 'favicon.ico'], dest: '<%=paths.build%>/' },
@@ -163,9 +181,30 @@ module.exports = function (grunt) {
      * Checks for changes in source files and (re)runs tasks to update
      */
     watch: {
-      scss: { files: ['src/**/*.scss'], tasks: ['sass'] },
-      js:   { files: ['src/**/*.js'], tasks: ['concat'] },
-      html: { files: ['src/**/*.html'], tasks: ['copy:build'] },
+      conf: { files: ['Gruntfile.js'] },
+      scss: { files: ['src/**/*.scss'], tasks: ['newer:sass'] },
+      js:   { files: ['src/**/*.js', '!src/**/*.es6.js', 'obj/**/*.js'], tasks: ['newer:concat'] },
+      es6:  { files: ['src/**/*.es6.js'], tasks: ['newer:traceur'] },
+      html: { files: ['src/**/*.html'], tasks: ['newer:copy'] },
+      dist: { files: ['<%=paths.build%>/**'], options: { livereload: true } },
+    },
+
+    connect: {
+      server: {
+        options: {
+          port: 8080,
+          base: '<%=paths.build%>/',
+        }
+      }
+    },
+
+    concurrent: {
+      watch: {
+        tasks: ['watch']
+      },
+      server: {
+        tasks: ['connect']
+      }
     },
 
   };
@@ -182,6 +221,10 @@ module.exports = function (grunt) {
    */
   grunt.registerTask('default', ['build']);
 
-  grunt.registerTask('build', ['clean:build', 'concat', 'sass', 'copy:build']);
-  grunt.registerTask('deploy', ['clean:deploy', 'uglify', 'cssmin', 'copy:deploy']);
+  grunt.registerTask('build', ['concat', 'sass', 'copy']);
+  grunt.registerTask('deploy', ['rebuild', 'uglify', 'cssmin', 'copy']);
+
+  // -- other handy tasks
+  grunt.registerTask('dev', ['build', 'connect', 'watch']);
+  grunt.registerTask('rebuild', ['clean:build', 'build']);
 };

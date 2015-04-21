@@ -7,7 +7,6 @@
         <h4 class="modal-title" id="">New Account...</h4>
       </div>
       <div class="modal-body">
-        {{> form}}
       </div>
     </div>
   </div>
@@ -18,17 +17,13 @@
   <small> <p class="text-muted">List of all accounts created and their respective summary.</p> </small>
 </div>
 
-{{#unless accounts}}
   <em>No accounts yet!</em>
   <p class="text-muted"> You can create one right now to start control of your life! :D</p>
-{{/unless}}
 
 <ul class="list-unstyled">
-{{#accounts}}
-  <li>
-    <a href="/accounts/{{_id}}">{{name}}</a> (<strong title="Balance">{{balance}}</strong> €)
+  <li ng-repeat="account in accounts">
+    <a ng-href="#/accounts/{{account.id}}">{{account.name}}</a> <span ng-bind="account.balance | currency"></span>
   </li>
-{{/accounts}}
 </ul>
 
 <button class="btn btn-primary" data-toggle="modal" data-target="#account-modal">Add account...</button>
